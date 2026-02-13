@@ -1,12 +1,21 @@
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light;
+    --color-primary: #0f172a;
+    --color-accent: #2563eb;
+    --color-surface: #ffffff;
+    --color-bg: #f1f5f9;
+    --color-border: #e2e8f0;
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
   }
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   .page-shell {
     min-height: 100vh;
@@ -14,78 +23,90 @@
     flex-direction: column;
   }
   .page-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   }
   .brand-mark {
     width: 48px;
     height: 48px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
     object-fit: cover;
   }
   .card {
-    background: #ffffff;
-    border-radius: 24px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    background: var(--color-surface);
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.04);
   }
   .card-muted {
-    background: #f8fafc;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
+    background: var(--color-bg);
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
   }
   .input-field {
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    border: 1.5px solid var(--color-border);
     padding: 0.65rem 0.9rem;
-    font-size: 0.95rem;
-    color: #0f172a;
-    background-color: #ffffff;
+    font-size: 0.925rem;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
   .input-field:focus {
     outline: none;
-    border-color: #94a3b8;
-    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.25);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
   }
   .btn-primary {
-    background-color: #0f172a;
+    background-color: var(--color-accent);
     color: #ffffff;
-    border-radius: 12px;
+    border: none;
+    border-radius: 10px;
     padding: 0.65rem 1.4rem;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+    font-size: 0.925rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.2);
   }
   .btn-primary:hover {
+    background-color: #1d4ed8;
     transform: translateY(-1px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.24);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
   }
   .btn-outline {
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
-    background: #ffffff;
-    border-radius: 12px;
+    border: 1.5px solid var(--color-border);
+    color: var(--color-text);
+    background: var(--color-surface);
+    border-radius: 10px;
     padding: 0.6rem 1.3rem;
     font-weight: 600;
+    font-size: 0.925rem;
+    cursor: pointer;
     transition: all 0.2s ease;
   }
   .btn-outline:hover {
     border-color: #94a3b8;
-    background: #f8fafc;
+    background: var(--color-bg);
   }
   .btn-soft {
     background: #e2e8f0;
-    color: #0f172a;
-    border-radius: 12px;
+    color: var(--color-text);
+    border-radius: 10px;
     padding: 0.6rem 1.3rem;
     font-weight: 600;
+    font-size: 0.925rem;
+    cursor: pointer;
     transition: all 0.2s ease;
   }
   .btn-soft:hover {
-    background: #cbd5f5;
+    background: #cbd5e1;
   }
   .badge {
     display: inline-flex;
@@ -94,5 +115,21 @@
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .site-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+  .site-footer a {
+    color: #475569;
+    transition: color 0.2s ease;
+  }
+  .site-footer a:hover {
+    color: var(--color-text);
   }
 </style>
