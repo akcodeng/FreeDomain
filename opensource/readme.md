@@ -7,6 +7,5 @@ At the current stage, fully opening the back-end without sufficient review and m
 
 We plan to gradually open-source more components as audits are completed and additional engineering capacity becomes available. The files in this folder represent the portions of the project that are safe and ready for public release at this time.
 
-DigitalPlat Domain Home Website front-end open-source code is available at:
- https://github.com/DigitalPlatDev/digitalplat-domain-website
+Imoogle Technology
 

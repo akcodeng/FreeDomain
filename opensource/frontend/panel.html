@@ -18,17 +18,19 @@
     <style>
         :root {
             color-scheme: light;
+            --color-accent: #2563eb;
         }
 
         html, body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow: auto;
             scrollbar-width: none;
             color: #0f172a;
+            -webkit-font-smoothing: antialiased;
         }
 
         html::-webkit-scrollbar,
@@ -45,7 +47,9 @@
             transition: width 0.3s, transform 0.3s;
             overflow: hidden;
             border-right: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+            display: flex;
+            flex-direction: column;
         }
         .sidebar.collapsed {
             width: 70px;
@@ -53,24 +57,29 @@
         .sidebar a {
             color: #475569;
             text-decoration: none;
-            padding: 10px 12px;
+            padding: 9px 12px;
             display: flex;
             align-items: center;
             gap: 12px;
-            border-radius: 0.75rem;
-            transition: background-color 0.3s, color 0.3s;
+            border-radius: 10px;
+            transition: background-color 0.2s, color 0.2s;
             font-weight: 500;
+            font-size: 0.9rem;
         }
         .sidebar a i {
-            width: 30px;
+            width: 28px;
             text-align: center;
+            font-size: 0.95rem;
         }
         .sidebar.collapsed a {
             justify-content: center;
         }
         .sidebar a.active {
-            background-color: #f1f5f9;
-            color: #0f172a;
+            background-color: #eff6ff;
+            color: var(--color-accent);
+        }
+        .sidebar a.active i {
+            color: var(--color-accent);
         }
         .sidebar a:hover {
             background-color: #f1f5f9;
@@ -83,16 +92,27 @@
             gap: 12px;
         }
         .sidebar .brand-logo img {
-            border-radius: 16px;
-            width: 44px;
-            height: 44px;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
         }
         .sidebar.collapsed .brand-logo {
             justify-content: center;
         }
         .sidebar.collapsed .brand-logo span,
         .sidebar.collapsed .nav-text {
+            display: none;
+        }
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+        .sidebar.collapsed .sidebar-footer {
             display: none;
         }
         .collapse-btn {
@@ -105,18 +125,18 @@
             background: none;
             color: #64748b;
             cursor: pointer;
-            transition: color 0.3s;
-            margin-bottom: 20px;
+            transition: color 0.2s;
+            margin-bottom: 16px;
         }
         .collapse-btn:hover {
             color: #0f172a;
         }
         .main-content {
             margin-left: 260px;
-            padding: 24px;
+            padding: 20px;
             flex-grow: 1;
             transition: margin-left 0.3s;
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
         }
         .main-content.expanded {
             margin-left: 70px;
@@ -124,22 +144,24 @@
         .navbar {
             background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 16px;
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+            margin-bottom: 16px;
         }
         .navbar a {
-            color: #334155;
+            color: #475569;
             text-decoration: none;
-            margin-right: 18px;
+            margin-right: 16px;
             font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s;
         }
         .navbar a:hover {
-            color: #0f172a;
+            color: var(--color-accent);
         }
         .navbar .dropdown-menu {
             background-color: #ffffff;
@@ -149,9 +171,9 @@
         }
         .content-wrapper {
             background: #ffffff;
-            border-radius: 20px;
+            border-radius: 16px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
             overflow: hidden;
         }
         .content-wrapper iframe {
@@ -282,6 +304,9 @@
                 <i class="fas fa-sign-out-alt"></i> <span class="nav-text">Logout</span>
             </a>
         </nav>
+        <div class="sidebar-footer">
+            Imoogle Technology
+        </div>
     </aside>
     <div class="main-content">
         <nav class="navbar">

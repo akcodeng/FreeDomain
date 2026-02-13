@@ -17,25 +17,32 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f3f4f6;
+      background-color: #f1f5f9;
       padding: 20px;
+      -webkit-font-smoothing: antialiased;
     }
     .btn {
-      background-color: #1f2937;
+      background-color: #2563eb;
       color: #ffffff;
       padding: 10px 20px;
-      border-radius: 0.5rem;
-      transition: background-color 0.3s;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
     }
     .btn:hover {
-      background-color: #374151;
+      background-color: #1d4ed8;
+      transform: translateY(-1px);
     }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
   <header class="text-center py-10">
-    <h1 class="text-4xl font-semibold">Welcome to DigitalPlat Domain Dashboard!</h1>
+    <p class="text-xs uppercase tracking-widest text-slate-400 mb-2">Dashboard</p>
+    <h1 class="text-3xl font-semibold text-slate-900">Welcome to DigitalPlat Domain Dashboard</h1>
   </header>
   
   <main class="container mx-auto px-4">
@@ -49,40 +56,40 @@
         🆕 Join the official <a href="https://t.me/digitalplatdomain" target="_blank" class="text-blue-600 hover:underline">DigitalPlat FreeDomain Telegram group</a> or <a href="https://discord.gg/7mrqAAqcSa" target="_blank" class="text-blue-600 hover:underline">Discord server</a> today! Be the first to know about the latest updates and happenings! Got questions? Facing challenges? Or simply want to show off your awesome builds? Don’t wait—become part of our community now! 🚀
       </div>      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="small-box bg-blue-600 text-white p-6 rounded-md shadow-md flex items-center justify-between">
+        <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex items-center justify-between">
           <div>
-            <h3 class="text-3xl font-semibold">{{domains}}</h3>
-            <p class="mt-2">My domains</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">My domains</p>
+            <h3 class="text-3xl font-semibold text-slate-900 mt-1">{{domains}}</h3>
           </div>
-          <div class="icon text-5xl opacity-75">
-            <i class="fas fa-cloud"></i>
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <i class="fas fa-cloud text-blue-600 text-lg"></i>
           </div>
         </div>
         
-        <div class="small-box bg-green-600 text-white p-6 rounded-md shadow-md flex items-center justify-between">
+        <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex items-center justify-between">
           <div>
-            <h3 class="text-3xl font-semibold">{{max_reg}}</h3>
-            <p class="mt-2">Domain name maximum registration limit</p>
-            <p class="mt-1 text-sm">Need more? No worries! Click the "Need more domains?" button on the left side of the panel. (Cause we are non-profit!)</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">Registration limit</p>
+            <h3 class="text-3xl font-semibold text-slate-900 mt-1">{{max_reg}}</h3>
+            <p class="mt-2 text-sm text-slate-500">Need more? Click "Need more domains?" in the panel sidebar.</p>
           </div>
-          <div class="icon text-5xl opacity-75">
-            <i class="fas fa-info"></i>
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center">
+            <i class="fas fa-info text-emerald-600 text-lg"></i>
           </div>
         </div>
       </div>
     </section>
     
     <section class="mb-8">
-      <div class="card bg-white shadow-md rounded-md overflow-hidden mb-6">
-        <div class="card-header bg-gray-800 text-white p-4">
-          <h3 class="text-xl">My Domains:</h3>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden mb-6">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h3 class="text-lg font-semibold text-slate-900">My Domains</h3>
         </div>
-        <div class="card-body p-4">
-          <table class="min-w-full bg-white">
+        <div class="p-4">
+          <table class="min-w-full">
             <thead>
               <tr>
-                <th class="py-2 px-4 bg-gray-100 text-left">#</th>
-                <th class="py-2 px-4 bg-gray-100 text-left">Domain</th>
+                <th class="py-2 px-4 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400 rounded-l-lg">#</th>
+                <th class="py-2 px-4 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400 rounded-r-lg">Domain</th>
               </tr>
             </thead>
             <tbody>
@@ -97,17 +104,17 @@
         </div>
       </div>
       
-      <div class="card bg-white shadow-md rounded-md overflow-hidden mb-6">
-        <div class="card-header bg-gray-800 text-white p-4">
-          <h3 class="text-xl">Expire soon:</h3>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden mb-6">
+        <div class="px-5 py-4 border-b border-slate-100">
+          <h3 class="text-lg font-semibold text-slate-900">Expiring Soon</h3>
         </div>
-        <div class="card-body p-4">
-          <table class="min-w-full bg-white">
+        <div class="p-4">
+          <table class="min-w-full">
             <thead>
               <tr>
-                <th class="py-2 px-4 bg-gray-100 text-left">#</th>
-                <th class="py-2 px-4 bg-gray-100 text-left">Domain</th>
-                <th class="py-2 px-4 bg-gray-100 text-left">Expire Date</th>
+                <th class="py-2 px-4 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400 rounded-l-lg">#</th>
+                <th class="py-2 px-4 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400">Domain</th>
+                <th class="py-2 px-4 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400 rounded-r-lg">Expire Date</th>
               </tr>
             </thead>
             <tbody>
@@ -131,37 +138,35 @@
         <button class="btn" onclick="window.location.href = '/panel/domains';">Manage my domains</button>
       </div>
       
-      <h2 class="text-2xl font-semibold mb-4">My Account / WHOIS Information</h2>
-      <div class="card bg-white shadow-md rounded-md overflow-hidden mb-6">
-        <div class="card-body p-4">
-          <table class="min-w-full bg-white">
-            <tbody>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Username:</td>
-                <td class="py-2 px-4 bg-white">{{username}}</td>
-              </tr>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Fullname:</td>
-                <td class="py-2 px-4 bg-white">{{fullname}}</td>
-              </tr>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Email:</td>
-                <td class="py-2 px-4 bg-white">{{email}}</td>
-              </tr>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Phone:</td>
-                <td class="py-2 px-4 bg-white">{{phone}}</td>
-              </tr>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Address:</td>
-                <td class="py-2 px-4 bg-white">{{address}}</td>
-              </tr>
-              <tr>
-                <td class="py-2 px-4 bg-gray-100 text-left font-semibold">Account ID:</td>
-                <td class="py-2 px-4 bg-white"><b>{{userid}}</b></td>
-              </tr>
-            </tbody>
-          </table>
+      <h2 class="text-2xl font-semibold mb-4 text-slate-900">My Account / WHOIS Information</h2>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl overflow-hidden mb-6">
+        <div class="p-5">
+          <dl class="space-y-4 text-sm">
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Username</dt>
+              <dd class="text-slate-700">{{username}}</dd>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Full name</dt>
+              <dd class="text-slate-700">{{fullname}}</dd>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Email</dt>
+              <dd class="text-slate-700">{{email}}</dd>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Phone</dt>
+              <dd class="text-slate-700">{{phone}}</dd>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Address</dt>
+              <dd class="text-slate-700">{{address}}</dd>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <dt class="text-xs uppercase tracking-wide text-slate-400">Account ID</dt>
+              <dd class="text-slate-900 font-semibold">{{userid}}</dd>
+            </div>
+          </dl>
         </div>
       </div>
       <div class="flex flex-wrap gap-4">
@@ -171,6 +176,10 @@
     </section>
     
   </main>
+
+  <footer class="text-center py-6 text-xs text-slate-400">
+    <p>Imoogle Technology</p>
+  </footer>
 
 </body>
 </html>
